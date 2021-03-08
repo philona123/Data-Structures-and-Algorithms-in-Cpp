@@ -1,24 +1,28 @@
 #include<iostream>
 using namespace std;
+
 class Node
 {
-    public:
-    int data;
-    Node *next;
-    Node(int d)
-    {
-        data=d;
-    }
+   public:
+   int data;
+   Node *next;
+   Node(int d)
+   {
+     data=d;
+     next= NULL;
+   }
 };
-class operations
-{
-    public:
-    Node *head;
-    Node *ptr;
-    void insertfirst(int d)
+    class operations
     {
-        Node *newnode = new Node(d);
-        newnode->next=NULL;
+        public:
+        Node *head;
+        operations() {
+            head =NULL;
+        }
+        void insertfirst(int d)
+        {
+            Node *newnode = new Node(d);
+        
         if(head==NULL)
         {
             head=newnode;
@@ -32,13 +36,16 @@ class operations
     }
     void display()
     {
+        
         Node *ptr;
         ptr=head;
-        while(ptr!=NULL)
+        
+        while(ptr)
         {
             cout<<ptr->data<<" ";
             ptr=ptr->next;
         }
+        
     }
     void insertafter(int key, int d)
     {
@@ -62,7 +69,6 @@ class operations
         Node *ptr;
         ptr=head;
         Node *newnode = new Node(d);
-        newnode->next=NULL;
         while(ptr->next!=NULL)
         {
             ptr=ptr->next;
@@ -70,8 +76,7 @@ class operations
         ptr->next=newnode;
     }
 };
-int main()
-{
+int main() {
     operations o;
     o.insertfirst(4);
     o.insertfirst(3);

@@ -45,6 +45,7 @@ class Node
             cout<<ptr->data<<" ";
             ptr=ptr->next;
         }
+        cout<<"\n";
         
     }
     void insertafter(int key, int d)
@@ -75,6 +76,60 @@ class Node
         }
         ptr->next=newnode;
     }
+    void deletefirst()
+    {
+        if(head==NULL)
+        {
+            cout<<"List is Empty.";
+            return;
+        }
+        else
+        {
+            head=head->next;
+        }
+    }
+    void deletenode(int d)
+    {
+        Node *ptr;
+        Node *ptr1;
+        ptr=head;
+        if(head->data==d)
+        {
+            head=head->next;
+            return;
+        }
+        while(ptr->data!=d)
+        {
+            if(ptr->next==NULL)
+            {
+                cout<<"Node not found.\n";
+                return;
+            }
+            ptr1=ptr;
+            ptr=ptr->next;
+        }
+        ptr1->next=ptr->next;
+    }
+    void deletelast()
+    {
+        Node *ptr;
+        Node *ptr1;
+        ptr=head;
+        if(head==NULL)
+        {
+            cout<<"List is Empty.\n";
+            return;
+        }
+        else
+        {
+            while(ptr->next!=NULL)
+            {
+                ptr1=ptr;
+                ptr=ptr->next;
+            }
+            ptr1->next=NULL;
+        }
+    }
 };
 int main() {
     operations o;
@@ -82,6 +137,10 @@ int main() {
     o.insertfirst(3);
     o.insertafter(3,5);
     o.insertlast(1);
+    o.insertlast(7);
+    o.deletenode(4);
+    o.display();
+    o.deletelast();
     o.display();
     return 0;
 }

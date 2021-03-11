@@ -60,6 +60,7 @@ int main()
     S.peek();
     S.display();
     S.pop();
+    S.peek();
     S.display();
     S.peek();
     return 0;

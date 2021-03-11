@@ -84,6 +84,7 @@ int main()
     Q.display();
     Q.show();
     Q.enqueue(40);
+    Q.enqueue(70);
     Q.display();
     Q.dequeue();
     Q.display();

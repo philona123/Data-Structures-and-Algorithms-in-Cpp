@@ -56,6 +56,7 @@ int main()
     S.push(30);
     S.push(40);
     S.push(50);
+    S.push(60);
     S.peek();
     S.display();
     S.pop();

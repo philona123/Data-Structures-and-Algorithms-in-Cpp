@@ -106,5 +106,6 @@ int main() {
     S.pop();
     S.peek();
     S.display();
+    S.push(13);
     return 0;
 }
